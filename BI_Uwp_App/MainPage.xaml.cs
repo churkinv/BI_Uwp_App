@@ -17,14 +17,27 @@ using Windows.UI.Xaml.Navigation;
 
 namespace BI_Uwp_App
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();         
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var textBox = new TextBox();
+
+            var binding = new Binding
+            {
+                Source = slider,  // or ElementName = slider.Name,
+                Path = new PropertyPath("Value")
+            };
+            textBox.SetBinding(TextBox.TextProperty, binding);
+            //txtbl_SliderValur.SetBinding(TextBox.TextProperty, binding);
+            //or (it is actually under the hood of calling framework element`s setbindoing method above  )
+            //BindingOperations.SetBinding(txtbl_SliderValur, TextBox.TextProperty, binding);
+            sp_MainStackPanel.Children.Add(textBox);
         }
     }
 }

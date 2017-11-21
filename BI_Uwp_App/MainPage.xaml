@@ -5,9 +5,17 @@
     xmlns:local="using:BI_Uwp_App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel  Width="200" Margin="50" x:Name="sp_MainStackPanel">
+            <Slider x:Name="slider"  Maximum="100"/>
+            <TextBlock x:Name="txtbl_SliderValur" Text="{Binding Value, ElementName=slider}" Margin="5"/>
 
+            <ProgressBar x:Name="pb_ProgressBar" Value="10" Height="20"/>
+            <TextBox Text="{Binding ElementName=pb_ProgressBar, Path=Value, Mode=TwoWay}"/>
+            <TextBox Text="Just to get rid of focus)"/>
+
+        </StackPanel>
     </Grid>
 </Page>
