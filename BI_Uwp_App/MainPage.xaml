@@ -7,15 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Loaded="Page_Loaded">
 
+    <Page.Resources>
+        <SolidColorBrush x:Key="Brush" Color="LightBlue"/>
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel  Width="200" Margin="50" x:Name="sp_MainStackPanel">
-            <Slider x:Name="slider"  Maximum="100"/>
-            <TextBlock x:Name="txtbl_SliderValur" Text="{Binding Value, ElementName=slider}" Margin="5"/>
-
-            <ProgressBar x:Name="pb_ProgressBar" Value="10" Height="20"/>
-            <TextBox Text="{Binding ElementName=pb_ProgressBar, Path=Value, Mode=TwoWay}"/>
-            <TextBox Text="Just to get rid of focus)"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0"  x:Name="sp_MainStackPanel">
+            <Slider x:Name="slider"  Maximum="100" Margin="10"/>
+            <TextBlock x:Name="txtbl_SliderValur" Text="{Binding Value, ElementName=slider}" Margin="10"/>
+            <ProgressBar x:Name="pb_ProgressBar" Value="10" Margin="10"/>
+            <TextBox Text="{Binding ElementName=pb_ProgressBar, Path=Value, Mode=TwoWay}" Margin="10"/>
+            <TextBox Text="Just to get rid of focus)" Margin="10"/>
         </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <TextBox Background="{StaticResource Brush}" Text="Number 1" Margin="10"/>
+            <TextBox Background="{StaticResource Brush}" Text="Number 2" Margin="10"/>
+            <TextBox Background="{StaticResource Brush}" Text="Number 2" Margin="10"/>
+            <TextBox Background="{StaticResource Brush}" Text="Number 2" Margin="10"/>
+            <Slider Value="{Binding Source={StaticResource Brush}, Path=Opacity, Mode=TwoWay}" 
+                    Maximum="1" StepFrequency="0.01" Margin="10"/>
+        </StackPanel>
+        
     </Grid>
 </Page>

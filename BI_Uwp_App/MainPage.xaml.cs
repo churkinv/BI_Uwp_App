@@ -37,7 +37,7 @@ namespace BI_Uwp_App
             //txtbl_SliderValur.SetBinding(TextBox.TextProperty, binding);
             //or (it is actually under the hood of calling framework element`s setbindoing method above  )
             //BindingOperations.SetBinding(txtbl_SliderValur, TextBox.TextProperty, binding);
-            sp_MainStackPanel.Children.Add(textBox);
+            //sp_MainStackPanel.Children.Add(textBox);
         }
     }
 }
