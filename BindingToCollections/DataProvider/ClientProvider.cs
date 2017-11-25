@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BindingToCollections.DataProvider
 {
-    class ClientProvider
+    class ClientProvider : IClientProvider
     {
-        public IEnumerable<Client> LoadClient()
+        public IEnumerable<Client> LoadClients()
         {
             return new List<Client>
             {

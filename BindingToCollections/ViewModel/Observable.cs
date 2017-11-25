@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BindingToCollections.ViewModel
 {
-    class Observable : INotifyPropertyChanged
+    public class Observable : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

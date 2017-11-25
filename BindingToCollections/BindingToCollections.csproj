@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="DataProvider\ClientProvider.cs" />
+    <Compile Include="DataProvider\IClientProvider.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
