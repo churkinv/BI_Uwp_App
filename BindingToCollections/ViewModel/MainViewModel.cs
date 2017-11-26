@@ -32,7 +32,8 @@ namespace BindingToCollections.ViewModel
         {
             _clientsProvider = clientProvider;
             DeleteCommand = new RelayCommand(OnDeleteExecute, OnDeleteCanExecute);
-            Clients = new ObservableCollection<Client>();         
+            Clients = new ObservableCollection<Client>();
+            LoadData();
         }       
 
         public void LoadData()

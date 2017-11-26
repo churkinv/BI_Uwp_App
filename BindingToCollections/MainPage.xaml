@@ -8,15 +8,25 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Delete" Command="{Binding DeleteCommand}" Margin="5"/>
-
-            <ListView ItemsSource="{Binding Clients}"
+        <Hub>
+            <HubSection Header="Clients" Width="400" DataContext="{Binding MainViewModel}">
+                <DataTemplate>
+                    <StackPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Content="Delete" Command="{Binding DeleteCommand}" Margin="5"/>
+                        <ListView ItemsSource="{Binding Clients}"
                       SelectedItem="{Binding SelectedClient, Mode=TwoWay}"
                       DisplayMemberPath="FirstName"
                       Margin="5" Height="300"/>
-
-        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>                
+            </HubSection>
+            <HubSection Header="Phones" Width="400" Background="DarkGray" DataContext="{Binding Phones}">
+                <DataTemplate>
+                    <ListView ItemsSource="{Binding}"/>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+        
 
     </Grid>
 </Page>
