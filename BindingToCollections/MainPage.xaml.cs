@@ -15,6 +15,12 @@ namespace BindingToCollections
         {
             this.InitializeComponent();
             this.DataContext = new MainViewModel(new ClientProvider());
+            this.Loaded += MainPage_Loaded;
+        }
+
+        private void MainPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            ((MainViewModel)DataContext).LoadData();
         }
     }
 }

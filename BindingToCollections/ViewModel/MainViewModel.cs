@@ -3,6 +3,7 @@ using BindingToCollections.DataProvider;
 using BindingToCollections.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,19 +14,9 @@ namespace BindingToCollections.ViewModel
     class MainViewModel : Observable
     {
         private IClientProvider _clientsProvider;
-
-        public MainViewModel(IClientProvider clientProvider)
-        {
-            _clientsProvider = clientProvider;
-            DeleteCommand = new RelayCommand(OnDeleteExecute, OnDeleteCanExecute);
-            Clients = new List<Client>();
-            LoadData();
-        }
-
-        public List<Client> Clients { get; private set; }
+        public ObservableCollection<Client> Clients { get; private set; }
         public ICommand DeleteCommand { get; private set; }
         private Client _selectedClient;
-
         public Client SelectedClient
         {
             get { return _selectedClient; }
@@ -36,6 +27,13 @@ namespace BindingToCollections.ViewModel
                 ((RelayCommand)DeleteCommand).RaiseCanExecuteChanged();
             }
         }
+
+        public MainViewModel(IClientProvider clientProvider)
+        {
+            _clientsProvider = clientProvider;
+            DeleteCommand = new RelayCommand(OnDeleteExecute, OnDeleteCanExecute);
+            Clients = new ObservableCollection<Client>();         
+        }       
 
         public void LoadData()
         {
