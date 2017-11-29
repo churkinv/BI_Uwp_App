@@ -20,6 +20,5 @@ namespace BindingToCollections.Model
                 RaisePropertyChanged("FirstName");
             }
         }
-
     }
 }
