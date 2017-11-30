@@ -1,36 +1,71 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace DataRendering.Data
 {
-    public class Company : INotifyPropertyChanged
+    public class Company : ViewModelBase
     {
         private string _name;
 
         public string Name
         {
             get { return _name; }
-            set {
+            set
+            {
                 _name = value;
                 OnPropertyChanged();
             }
-        }        
+        }
+
+        private ImageSource _image;
+        public ImageSource Image
+        {
+            get { return _image; }
+            set
+            {
+                _image = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Address _companyAddress;
+        public Address CompanyAddress
+        {
+            get { return _companyAddress; }
+            set
+            {
+                _companyAddress = value;
+                OnPropertyChanged();
+            }
+        }
 
         public static ICollection<Company> GetCompanies()
         {
             return new List<Company>
             {
-                new Company {Name = "Samsung" },
-                new Company {Name = "Philips"},
-                new Company {Name = "DeLonghi"}
+                new Company
+                {
+                    Name = "Samsung",
+                    Image = new BitmapImage (new Uri("ms-appx:///Data/Images/delonghi.jpg")),
+                    CompanyAddress = new Address("London")
+                },
+                new Company
+                {
+                    Name = "Philips",
+                    Image = new BitmapImage (new Uri("ms-appx:///Data/Images/Philips_logo_neu.JPG")),
+                    CompanyAddress = new Address("NewYork")
+                },
+                new Company
+                {
+                    Name = "DeLonghi",
+                    Image = new BitmapImage (new Uri("ms-appx:///Data/Images/samsung-logo.jpg")),
+                    CompanyAddress = new Address("Paris")
+                }
             };
         }
+
         #region 1st method
         //public override string ToString()
         //{
@@ -38,13 +73,5 @@ namespace DataRendering.Data
         //}
         #endregion
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null) // with these two parametrs null and CallerMember.. 
-                                                                                               //i can call event without paremeter. Compiler will automatically passed the property name it is callsed from
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

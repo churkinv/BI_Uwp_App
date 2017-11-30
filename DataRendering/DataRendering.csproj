@@ -95,7 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Address.cs" />
     <Compile Include="Data\Company.cs" />
+    <Compile Include="Data\ViewModelBase.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -108,6 +110,9 @@
     <None Include="DataRendering_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Images\delonghi.jpg" />
+    <Content Include="Data\Images\Philips_logo_neu.JPG" />
+    <Content Include="Data\Images\samsung-logo.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
