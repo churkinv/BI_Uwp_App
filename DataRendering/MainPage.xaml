@@ -8,6 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding}" Margin="50"/>
+        <ListView ItemsSource="{Binding}" DisplayMemberPath="Name" Margin="50"/>
+        <!--Or i can use more complex syntax like Company.Subclass.Property
+            Disadvantage of DisplayMemberPath is that i can display only one property at a time -->
     </Grid>
 </Page>

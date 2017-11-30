@@ -18,16 +18,9 @@ namespace DataRendering.Data
             get { return _name; }
             set {
                 _name = value;
-                ///OnPropertyChanged();
+                OnPropertyChanged();
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        //public override OnPopertyChanged([CallerMemberName])
-        //{
-
-        //}
+        }        
 
         public static ICollection<Company> GetCompanies()
         {
@@ -38,10 +31,20 @@ namespace DataRendering.Data
                 new Company {Name = "DeLonghi"}
             };
         }
+        #region 1st method
+        //public override string ToString()
+        //{
+        //    return Name;
+        //}
+        #endregion
 
-        public override string ToString()
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null) // with these two parametrs null and CallerMember.. 
+                                                                                               //i can call event without paremeter. Compiler will automatically passed the property name it is callsed from
         {
-            return Name;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
