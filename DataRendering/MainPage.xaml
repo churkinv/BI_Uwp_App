@@ -8,8 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding}" Margin="50" ItemTemplate="{StaticResource MyTemplate}"/>
-        <!-- we can point: DisplayMemberPath="Name", Or i can use more complex syntax like Company.Subclass.Property
+        <ListView ItemsSource="{Binding}" Margin="50">
+            <ListView.ItemTemplateSelector>
+                <local:ClientDataTemplateSelector/>
+            </ListView.ItemTemplateSelector>
+            <!--ItemTemplate="{StaticResource MyTemplate}"-->
+            <!-- we can point: DisplayMemberPath="Name", Or i can use more complex syntax like Company.Subclass.Property
             Disadvantage of DisplayMemberPath is that i can display only one property at a time, more flexible way is the following (to keep code clean moved to app.xaml): -->
             <!--<ListView.ItemTemplate>
                 <DataTemplate>
@@ -25,6 +29,7 @@
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate> -->       
+            </ListView.ItemTemplate> -->
+        </ListView> 
     </Grid>
 </Page>

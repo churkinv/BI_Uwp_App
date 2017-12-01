@@ -12,8 +12,10 @@ namespace DataRendering
             var companyTemplate = (DataTemplate)App.Current.Resources["MyTemplate"];
             var companyTemplatePrivate = (DataTemplate)App.Current.Resources["MyTemplatePrivate"];
 
-            if (company.Name == "samsung") return companyTemplatePrivate;
-
+            if (company.Name == "Samsung")
+            {
+                return companyTemplatePrivate;
+            }
             return companyTemplate;
         }
     }
