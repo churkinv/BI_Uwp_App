@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BI_Uwp_App.UI", "BI_Uwp_App\BI_Uwp_App.UI.csproj", "{C58E3479-FC99-492D-8905-5B4B33002DEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingToCollections", "BindingToCollections\BindingToCollections.csproj", "{C7F58A70-1CAF-4DB6-97BD-6328089DB126}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRendering", "DataRendering\DataRendering.csproj", "{6861DA8F-2332-4AD7-8CE0-F391FDEE1D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheFlipView", "TheFlipView\TheFlipView.csproj", "{CA6B45E0-F54B-47D2-A817-A80A606C20C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,26 @@ Global
 		{6861DA8F-2332-4AD7-8CE0-F391FDEE1D2D}.Release|x86.ActiveCfg = Release|x86
 		{6861DA8F-2332-4AD7-8CE0-F391FDEE1D2D}.Release|x86.Build.0 = Release|x86
 		{6861DA8F-2332-4AD7-8CE0-F391FDEE1D2D}.Release|x86.Deploy.0 = Release|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|ARM.Build.0 = Debug|ARM
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|ARM.Deploy.0 = Debug|ARM
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|x64.ActiveCfg = Debug|x64
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|x64.Build.0 = Debug|x64
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|x64.Deploy.0 = Debug|x64
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|x86.ActiveCfg = Debug|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|x86.Build.0 = Debug|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Debug|x86.Deploy.0 = Debug|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|Any CPU.ActiveCfg = Release|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|ARM.ActiveCfg = Release|ARM
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|ARM.Build.0 = Release|ARM
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|ARM.Deploy.0 = Release|ARM
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|x64.ActiveCfg = Release|x64
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|x64.Build.0 = Release|x64
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|x64.Deploy.0 = Release|x64
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|x86.ActiveCfg = Release|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|x86.Build.0 = Release|x86
+		{CA6B45E0-F54B-47D2-A817-A80A606C20C7}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

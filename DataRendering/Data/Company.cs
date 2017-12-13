@@ -8,6 +8,8 @@ namespace DataRendering.Data
     public class Company : ViewModelBase
     {
         private string _name;
+        private ImageSource _image;
+        private Address _companyAddress;
 
         public string Name
         {
@@ -18,8 +20,7 @@ namespace DataRendering.Data
                 OnPropertyChanged();
             }
         }
-
-        private ImageSource _image;
+       
         public ImageSource Image
         {
             get { return _image; }
@@ -29,8 +30,7 @@ namespace DataRendering.Data
                 OnPropertyChanged();
             }
         }
-
-        private Address _companyAddress;
+      
         public Address CompanyAddress
         {
             get { return _companyAddress; }
