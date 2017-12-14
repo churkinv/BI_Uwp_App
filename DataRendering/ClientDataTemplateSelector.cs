@@ -4,6 +4,10 @@ using Windows.UI.Xaml.Controls;
 
 namespace DataRendering
 {
+    /// <summary>
+    /// Using this class we can select which DataTemplate in App.xaml use 
+    /// depending on specific property (company`s name in our case)
+    /// </summary>
     public class ClientDataTemplateSelector : DataTemplateSelector
     {
         protected override DataTemplate SelectTemplateCore(object item)

@@ -8,7 +8,7 @@ namespace TheFlipView.Data
     {
         public static ObservableCollection<Client> LoadClients()
         {
-            return new ObservableCollection<Client>
+            return new ObservableCollection<Client> // Note reorder mechanizm on listview works only with ObservableCollections 
             {
                 new Client
                 {
