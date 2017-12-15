@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BI_Uwp_App.UI", "BI_Uwp_App\BI_Uwp_App.UI.csproj", "{C58E3479-FC99-492D-8905-5B4B33002DEB}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheFlipView", "TheFlipView\TheFlipView.csproj", "{CA6B45E0-F54B-47D2-A817-A80A606C20C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheListView", "TheListView\TheListView.csproj", "{950ED049-AEE7-4EAE-9D84-91F1FED16DD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGridView", "TheGridView\TheGridView.csproj", "{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +127,26 @@ Global
 		{950ED049-AEE7-4EAE-9D84-91F1FED16DD1}.Release|x86.ActiveCfg = Release|x86
 		{950ED049-AEE7-4EAE-9D84-91F1FED16DD1}.Release|x86.Build.0 = Release|x86
 		{950ED049-AEE7-4EAE-9D84-91F1FED16DD1}.Release|x86.Deploy.0 = Release|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|ARM.Build.0 = Debug|ARM
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|ARM.Deploy.0 = Debug|ARM
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|x64.ActiveCfg = Debug|x64
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|x64.Build.0 = Debug|x64
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|x64.Deploy.0 = Debug|x64
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|x86.ActiveCfg = Debug|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|x86.Build.0 = Debug|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Debug|x86.Deploy.0 = Debug|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|Any CPU.ActiveCfg = Release|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|ARM.ActiveCfg = Release|ARM
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|ARM.Build.0 = Release|ARM
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|ARM.Deploy.0 = Release|ARM
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|x64.ActiveCfg = Release|x64
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|x64.Build.0 = Release|x64
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|x64.Deploy.0 = Release|x64
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|x86.ActiveCfg = Release|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|x86.Build.0 = Release|x86
+		{460F0B51-554A-4A4D-B7E8-BC14B0540FCC}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
