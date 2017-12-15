@@ -9,13 +9,28 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <GridView ItemsSource="{Binding}" Margin="50">
+            <!-- Option one to manage Item view ing GridView (also there is an option to manage it 
+            directly in DataTemaplate on element but it is not good practice)
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid ItemHeight="300" ItemWidth="300"/>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            Option two:-->
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Width" Value="300"/>
+                    <Setter Property="Height" Value="300"/>
+                </Style>
+            </GridView.ItemContainerStyle>            
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Image Source="{Binding ImageSource}" Width="300" Height="300"/>
-                        <Border Background="AliceBlue" VerticalAlignment="Bottom"/>
-                        <TextBlock Text="{Binding Name}"
-                                   FontSize="30" Margin ="10" VerticalAlignment="Bottom"/>
+                        <Image Source="{Binding ImageSource}"/>
+                        <Border Background="#99000000" VerticalAlignment="Bottom">
+                            <TextBlock Text="{Binding Name}"
+                                   FontSize="30" Foreground="White" Margin ="10" VerticalAlignment="Bottom"/>
+                        </Border>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>            
