@@ -1,12 +1,12 @@
 ﻿using Windows.UI.Xaml.Media;
 
-namespace TheGridView.Data
+namespace GroupingData.Data
 {
     public class Client : Observable
     {
         private string _name;
         private ImageSource _imageSource;
-
+      
         public string Name
         {
             get { return _name; }
@@ -15,7 +15,7 @@ namespace TheGridView.Data
                 _name = value;
                 OnPropertyChanged();
             }
-        }
+        }       
 
         public ImageSource ImageSource
         {

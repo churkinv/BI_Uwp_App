@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace TheGridView.Data
+namespace GroupingData.Data
 {
     public class Observable : INotifyPropertyChanged
     {

@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace TheListView.Data
+namespace TheGridView.Data
 {
     public class ClientLoader
     {
