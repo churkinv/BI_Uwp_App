@@ -6,7 +6,7 @@ namespace GroupingData.Data
     {
         private string _name;
         private ImageSource _imageSource;
-      
+
         public string Name
         {
             get { return _name; }
@@ -15,7 +15,7 @@ namespace GroupingData.Data
                 _name = value;
                 OnPropertyChanged();
             }
-        }       
+        }
 
         public ImageSource ImageSource
         {

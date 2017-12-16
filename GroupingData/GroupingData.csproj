@@ -118,7 +118,10 @@
     <Content Include="Data\Images\BradPitt.jpg" />
     <Content Include="Data\Images\CameronDiaz2.jpg" />
     <Content Include="Data\Images\EmmaWatson.jpg" />
+    <Content Include="Data\Images\JenniferAniston.jpg" />
     <Content Include="Data\Images\LenaHeadey.jpg" />
+    <Content Include="Data\Images\MillaJovovich.jpg" />
+    <Content Include="Data\Images\OlgaFreimut.jpg" />
     <Content Include="Data\Images\RobertShiller.jpg" />
     <Content Include="Data\Images\StephenHawking.jpg" />
     <Content Include="Data\Images\SylvesterStallone.jpg" />
