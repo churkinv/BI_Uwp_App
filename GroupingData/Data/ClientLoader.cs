@@ -47,6 +47,11 @@ namespace GroupingData.Data
                         {
                             Name = "Robert Shiller",
                             ImageSource = new BitmapImage(new Uri("ms-appx:///Data/Images/RobertShiller.jpg"))
+                        },
+                        new Client
+                        {
+                            Name = "Sylvester Stallone",
+                            ImageSource = new BitmapImage(new Uri("ms-appx:///Data/Images/SylvesterStallone.jpg"))
                         }
                     }
                 },

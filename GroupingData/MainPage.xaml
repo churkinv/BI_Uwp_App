@@ -9,8 +9,8 @@
     <Page.Resources>
         <CollectionViewSource x:Key="clientSource"
                               Source="{Binding}"  
-                              IsSourceGrouped="True"                             
-                              ItemsPath="Clients"/> <!--by this property we set a child of our group, 
+                              IsSourceGrouped="True" />
+                          <!--ItemsPath="Clients"/>--> <!--For option one extend to thi. By this property we set a child of our group, 
         in our case it is Clients obs. collection from ClientGroup-->
     </Page.Resources>    
     <Grid DataContext="{Binding Source={StaticResource clientSource}}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -37,12 +37,15 @@
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
                             <Border BorderBrush="White" BorderThickness="2">
-                                <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Key}" FontSize="30"
+                                           Margin="10"/> <!--this textblock is for option two, grouping with LINQ-->
+                                <!--StackPanel is for option one-->
+                                <!--<StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding GroupName}" FontSize="30" 
                                                Margin="10"/>
                                     <TextBlock Text="{Binding Clients.Count}" FontSize="30"
                                                Margin="0 10 10 10"/>
-                                </StackPanel>
+                                </StackPanel>-->
                             </Border>
                         </DataTemplate>
                     </GroupStyle.HeaderTemplate>
