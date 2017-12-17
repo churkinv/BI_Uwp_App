@@ -20,7 +20,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>-->
 
-        <SemanticZoom>
+        <SemanticZoom x:Name="semanticZoom">
             <SemanticZoom.ZoomedOutView> <!--to see it click on space between images-->
                 <ListView ItemsSource="{Binding CollectionGroups}" Margin="50">
                     <!--in this case we  baind to 
@@ -64,7 +64,7 @@
                         <GroupStyle>
                             <GroupStyle.HeaderTemplate>
                                 <DataTemplate>
-                                    <Border BorderBrush="White" BorderThickness="2">
+                                    <Border Tapped="Border_Tapped" Background="Transparent" BorderBrush="White" BorderThickness="2">
                                         <TextBlock Text="{Binding Key}" FontSize="30"
                                            Margin="10"/>
                                         <!--this textblock is for option two, grouping with LINQ-->

@@ -51,5 +51,11 @@ namespace GroupingData
             //     IObservableVector<object> GroupItems { get; }
             //}
         }
+
+        private void Border_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            semanticZoom.ToggleActiveView();  // it seems that this behavior is default for win10, so no diffrence between using Tapped event and not,
+                                              // bug/reboot?
+        }
     }
 }
