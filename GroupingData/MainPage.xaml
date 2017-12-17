@@ -13,66 +13,77 @@
                           <!--ItemsPath="Clients"/>--> <!--For option one extend to thi. By this property we set a child of our group, 
         in our case it is Clients obs. collection from ClientGroup-->
     </Page.Resources>    
+    
     <Grid DataContext="{Binding Source={StaticResource clientSource}}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>  commented before using SemanticZoom
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>-->
 
-        <ListView ItemsSource="{Binding CollectionGroups}" Margin="50"> <!--in this case we  baind to 
+        <SemanticZoom>
+            <SemanticZoom.ZoomedOutView> <!--to see it click on space between images-->
+                <ListView ItemsSource="{Binding CollectionGroups}" Margin="50">
+                    <!--in this case we  baind to 
             CollectionViewSource (fact is ICollectionView) and can use its property CollectionGroups-->
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="White" BorderThickness="2">
-                        <StackPanel> <!--We bind Textblock to ICollectionView instance, which  has Group property and holds real group we created, in our case it is the one
-                            IGrouping instance created by LINQ statement, which has Key property. See code behind MainPage for more details-->
-                            <TextBlock Text="{Binding Group.Key}" FontSize="30" Margin="10"/>
-                            <ItemsControl ItemsSource="{Binding GroupItems}"
-                                          DisplayMemberPath="Name"/>
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-           
-
-        <GridView Grid.Column="1" ItemsSource="{Binding}" Margin="50">
-            <GridView.ItemContainerStyle>
-                <Style TargetType="GridViewItem">
-                    <Setter Property="Width" Value="400"/>
-                    <Setter Property="Height" Value="400"/>
-                </Style>
-            </GridView.ItemContainerStyle>
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Image Source="{Binding ImageSource}"/>
-                        <Border Background="#99000000" VerticalAlignment="Bottom">
-                            <TextBlock Text="{Binding Name}"
-                                   FontSize="30" Foreground="White" Margin ="10" VerticalAlignment="Bottom"/>
-                        </Border>
-                    </Grid>
-                </DataTemplate>
-            </GridView.ItemTemplate>
-            <GridView.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
+                    <ListView.ItemTemplate>
                         <DataTemplate>
                             <Border BorderBrush="White" BorderThickness="2">
-                                <TextBlock Text="{Binding Key}" FontSize="30"
-                                           Margin="10"/> <!--this textblock is for option two, grouping with LINQ-->
-                                <!--StackPanel is for option one-->
-                                <!--<StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <!--We bind Textblock to ICollectionView instance, which  has Group property and holds real group we created, in our case it is the one
+                            IGrouping instance created by LINQ statement, which has Key property. See code behind MainPage for more details-->
+                                    <TextBlock Text="{Binding Group.Key}" FontSize="30" Margin="10"/>
+                                    <ItemsControl ItemsSource="{Binding GroupItems}"
+                                          DisplayMemberPath="Name"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </SemanticZoom.ZoomedOutView>
+
+            <SemanticZoom.ZoomedInView>
+                <GridView Grid.Column="1" ItemsSource="{Binding}" Margin="50">
+                    <GridView.ItemContainerStyle>
+                        <Style TargetType="GridViewItem">
+                            <Setter Property="Width" Value="400"/>
+                            <Setter Property="Height" Value="400"/>
+                        </Style>
+                    </GridView.ItemContainerStyle>
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Source="{Binding ImageSource}"/>
+                                <Border Background="#99000000" VerticalAlignment="Bottom">
+                                    <TextBlock Text="{Binding Name}"
+                                   FontSize="30" Foreground="White" Margin ="10" VerticalAlignment="Bottom"/>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                    <GridView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="White" BorderThickness="2">
+                                        <TextBlock Text="{Binding Key}" FontSize="30"
+                                           Margin="10"/>
+                                        <!--this textblock is for option two, grouping with LINQ-->
+                                        <!--StackPanel is for option one-->
+                                        <!--<StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding GroupName}" FontSize="30" 
                                                Margin="10"/>
                                     <TextBlock Text="{Binding Clients.Count}" FontSize="30"
                                                Margin="0 10 10 10"/>
                                 </StackPanel>-->
-                            </Border>
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </GridView.GroupStyle>
-        </GridView>
+                                    </Border>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </GridView.GroupStyle>
+                </GridView>
+            </SemanticZoom.ZoomedInView>
+        
+        </SemanticZoom>
+
     </Grid>
 </Page>
