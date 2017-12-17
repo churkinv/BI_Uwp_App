@@ -14,11 +14,33 @@
         in our case it is Clients obs. collection from ClientGroup-->
     </Page.Resources>    
     <Grid DataContext="{Binding Source={StaticResource clientSource}}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView ItemsSource="{Binding}" Margin="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListView ItemsSource="{Binding CollectionGroups}" Margin="50"> <!--in this case we  baind to 
+            CollectionViewSource (fact is ICollectionView) and can use its property CollectionGroups-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="White" BorderThickness="2">
+                        <StackPanel> <!--We bind Textblock to ICollectionView instance, which  has Group property and holds real group we created, in our case it is the one
+                            IGrouping instance created by LINQ statement, which has Key property. See code behind MainPage for more details-->
+                            <TextBlock Text="{Binding Group.Key}" FontSize="30" Margin="10"/>
+                            <ItemsControl ItemsSource="{Binding GroupItems}"
+                                          DisplayMemberPath="Name"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+           
+
+        <GridView Grid.Column="1" ItemsSource="{Binding}" Margin="50">
             <GridView.ItemContainerStyle>
                 <Style TargetType="GridViewItem">
-                    <Setter Property="Width" Value="300"/>
-                    <Setter Property="Height" Value="300"/>
+                    <Setter Property="Width" Value="400"/>
+                    <Setter Property="Height" Value="400"/>
                 </Style>
             </GridView.ItemContainerStyle>
             <GridView.ItemTemplate>

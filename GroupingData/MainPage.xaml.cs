@@ -27,14 +27,29 @@ namespace GroupingData
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             // first option is to use newly created class (ClientGroup) and method + XAML
-            //this.DataContext = ClientLoader.LoadClientGroups(); 
+            // this.DataContext = ClientLoader.LoadClientGroups(); 
 
             // second option: if we don`t have ClientGroup class 
             // we can use LINQ to group items as below. We also don`t need to use 
             //ItemsPath in XAML of our CollectionViewSource + adjsut HeaderTemplate
 
             ObservableCollection<Client> clients = ClientLoader.LoadClients();
-            this.DataContext = clients.OrderBy(f =>f.Name).GroupBy(f => f.Name[0]); // we are ordering by name and grouping by the first character of the name
+            this.DataContext = clients.OrderBy(f => f.Name).GroupBy(f => f.Name[0]); // we are ordering by name and grouping by the first character of the name
+                                                                                     // LINQ will create IGrouping object
+
+            //************* The ICollectionViewGroup *************
+            // to understand to what kind of properties we are binding to from XAML
+            // public interface ICollectionView : IObservable<object>, IList<object>, IEnumerable<object>
+            // {
+            //     ....
+            //     IObservableVector<object> CollectionGroups { get; }
+            // }
+
+            //public interface ICollectionViewGroup 
+            //{
+            //     object Group { get; }
+            //     IObservableVector<object> GroupItems { get; }
+            //}
         }
     }
 }
