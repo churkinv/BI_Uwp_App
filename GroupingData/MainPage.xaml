@@ -40,7 +40,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </SemanticZoom.ZoomedOutView>
-
             <SemanticZoom.ZoomedInView>
                 <GridView Grid.Column="1" ItemsSource="{Binding}" Margin="50">
                     <GridView.ItemContainerStyle>
@@ -81,9 +80,7 @@
                         </GroupStyle>
                     </GridView.GroupStyle>
                 </GridView>
-            </SemanticZoom.ZoomedInView>
-        
+            </SemanticZoom.ZoomedInView>        
         </SemanticZoom>
-
     </Grid>
 </Page>
